@@ -23,12 +23,14 @@ void loop() {
   }
 }
 
+// Reset base light level, ensure arm in resting position.
 void reset() {
   baseLight = analogRead(sensorPin);
   myServo.write(baseAngle);
-  delay(2000);
+  delay(1000);
 }
 
+// Stabs arm between 1 & 5 times.
 void stab() {
   int stabs = random(0, 5);
   while (stabs > 0) {
