@@ -44,7 +44,7 @@ void stab() {
 void swing(int high) {
   myServo.write(0); // swing arm down
   delay(750);
-  myServo.write(136 + random(-16, 16)); // swing arm up
+  myServo.write(high); // swing arm up
   delay(750);
 }
 
