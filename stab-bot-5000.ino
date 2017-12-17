@@ -32,12 +32,18 @@ void reset() {
 void stab() {
   int stabs = random(0, 5);
   while (stabs > 0) {
-    myServo.write(0); // swing arm down
-    delay(750);
-    myServo.write(136 + random(-16, 16)); // swing arm up
-    delay(750);
+    swing(136 + random(-16, 16));
     stabs--;
   }
+  swing(baseAngle);
+}
+
+// Moves servo completely down, then to 'high'.
+void swing(int high) {
+  myServo.write(0); // swing arm down
+  delay(750);
+  myServo.write(136 + random(-16, 16)); // swing arm up
+  delay(750);
 }
 
 
